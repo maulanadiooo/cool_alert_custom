@@ -96,7 +96,7 @@ class CoolAlertButtons extends StatelessWidget {
 
     final okayBtn = MaterialButton(
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(30.0),
+        borderRadius: BorderRadius.circular(12.0),
       ),
       padding: options.paddingButton,
       elevation: 0,
@@ -107,20 +107,37 @@ class CoolAlertButtons extends StatelessWidget {
       ),
     );
 
-    final cancelBtn = MaterialButton(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(30.0),
-        side: BorderSide(
-          color: options.confirmBtnColor ?? Theme.of(context!).primaryColor,
-          width: 1,
+    // final cancelBtn = MaterialButton(
+    //   shape: RoundedRectangleBorder(
+    //     borderRadius: BorderRadius.circular(30.0),
+    //     side: BorderSide(
+    //       color: options.confirmBtnColor ?? Theme.of(context!).primaryColor,
+    //       width: 1,
+    //     ),
+    //   ),
+    //   padding: options.paddingButton,
+    //   elevation: 0,
+    //   color: Colors.transparent,
+    //   onPressed: onTap,
+    //   child: Center(
+    //     child: btnText,
+    //   ),
+    // );
+    final cancelBtn = GestureDetector(
+      onTap: onTap,
+      child: Container(
+        width: double.infinity,
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(12),
+            border: Border.all(
+              width: 1,
+              color: options.confirmBtnColor ?? Theme.of(context!).primaryColor,
+            ),
+            color: Colors.transparent),
+        padding: options.paddingButton,
+        child: Center(
+          child: btnText,
         ),
-      ),
-      padding: options.paddingButton,
-      elevation: 0,
-      color: Colors.transparent,
-      onPressed: onTap,
-      child: Center(
-        child: btnText,
       ),
     );
 
