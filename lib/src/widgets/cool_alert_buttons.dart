@@ -94,31 +94,36 @@ class CoolAlertButtons extends StatelessWidget {
       style: _defaultTextStyle(isOkayBtn),
     );
 
-    // final okayBtn = MaterialButton(
-    //   shape: RoundedRectangleBorder(
-    //     borderRadius: BorderRadius.circular(12.0),
-    //   ),
-    //   padding: options.paddingButton,
-    //   elevation: 0,
-    //   color: options.confirmBtnColor ?? Theme.of(context!).primaryColor,
-    //   onPressed: onTap,
-    //   child: Center(
-    //     child: btnText,
-    //   ),
-    // );
-    final okayBtn = GestureDetector(
-      onTap: onTap,
-      child: Container(
-        width: double.infinity,
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(12),
-            color: options.confirmBtnColor ?? Theme.of(context!).primaryColor),
+    dynamic okayBtn;
+    if (options.type == CoolAlertType.confirm) {
+      okayBtn = GestureDetector(
+        onTap: onTap,
+        child: Container(
+          width: double.infinity,
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(12),
+              color:
+                  options.confirmBtnColor ?? Theme.of(context!).primaryColor),
+          padding: options.paddingButton,
+          child: Center(
+            child: btnText,
+          ),
+        ),
+      );
+    } else {
+      okayBtn = MaterialButton(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(12.0),
+        ),
         padding: options.paddingButton,
+        elevation: 0,
+        color: options.confirmBtnColor ?? Theme.of(context!).primaryColor,
+        onPressed: onTap,
         child: Center(
           child: btnText,
         ),
-      ),
-    );
+      );
+    }
 
     // final cancelBtn = MaterialButton(
     //   shape: RoundedRectangleBorder(
@@ -136,23 +141,37 @@ class CoolAlertButtons extends StatelessWidget {
     //     child: btnText,
     //   ),
     // );
-    final cancelBtn = GestureDetector(
-      onTap: onTap,
-      child: Container(
-        width: double.infinity,
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(12),
-            border: Border.all(
-              width: 1,
-              color: options.confirmBtnColor ?? Theme.of(context!).primaryColor,
-            ),
-            color: Colors.transparent),
-        padding: options.paddingButton,
-        child: Center(
-          child: btnText,
+    dynamic cancelBtn;
+    if (options.type == CoolAlertType.confirm) {
+      cancelBtn = GestureDetector(
+        onTap: onTap,
+        child: Container(
+          width: double.infinity,
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(12),
+              border: Border.all(
+                width: 1,
+                color:
+                    options.confirmBtnColor ?? Theme.of(context!).primaryColor,
+              ),
+              color: Colors.transparent),
+          padding: options.paddingButton,
+          child: Center(
+            child: btnText,
+          ),
         ),
-      ),
-    );
+      );
+    } else {
+      cancelBtn = GestureDetector(
+        onTap: onTap,
+        child: Container(
+          padding: options.paddingButton,
+          child: Center(
+            child: btnText,
+          ),
+        ),
+      );
+    }
 
     return isOkayBtn ? okayBtn : cancelBtn;
   }
