@@ -93,6 +93,7 @@ class CoolAlertButtons extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(30.0),
       ),
+      padding: options.paddingButton,
       elevation: 0,
       color: options.confirmBtnColor ?? Theme.of(context!).primaryColor,
       onPressed: onTap,
@@ -101,8 +102,18 @@ class CoolAlertButtons extends StatelessWidget {
       ),
     );
 
-    final cancelBtn = GestureDetector(
-      onTap: onTap,
+    final cancelBtn = MaterialButton(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(30.0),
+        side: BorderSide(
+          color: options.confirmBtnColor ?? Theme.of(context!).primaryColor,
+          width: 1,
+        ),
+      ),
+      padding: options.paddingButton,
+      elevation: 0,
+      color: Colors.transparent,
+      onPressed: onTap,
       child: Center(
         child: btnText,
       ),
