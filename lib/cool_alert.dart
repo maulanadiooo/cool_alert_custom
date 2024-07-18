@@ -107,6 +107,9 @@ class CoolAlertCustom {
 
     /// Reverse the order of the buttons
     bool reverseBtnOrder = false,
+
+    // padding button
+    EdgeInsetsGeometry? paddingButton,
   }) {
     if (autoCloseDuration != null) {
       Future.delayed(autoCloseDuration, () {
@@ -141,6 +144,7 @@ class CoolAlertCustom {
       closeOnConfirmBtnTap: closeOnConfirmBtnTap,
       autoCloseDuration: autoCloseDuration,
       reverseBtnOrder: reverseBtnOrder,
+      paddingButton: paddingButton,
     );
 
     final child = PopScope(
