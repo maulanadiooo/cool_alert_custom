@@ -12,8 +12,13 @@ class CoolAlertButtons extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final showCancelBtn =
+        options.type == CoolAlertType.confirm ? true : options.showCancelBtn!;
     List<Widget> buttons = [
       _cancelBtn(context),
+      SizedBox(
+        width: showCancelBtn ? 10 : 0,
+      ),
       _okayBtn(context),
     ];
     if (options.reverseBtnOrder) {
