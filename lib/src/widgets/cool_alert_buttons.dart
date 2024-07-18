@@ -94,16 +94,29 @@ class CoolAlertButtons extends StatelessWidget {
       style: _defaultTextStyle(isOkayBtn),
     );
 
-    final okayBtn = MaterialButton(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(12.0),
-      ),
-      padding: options.paddingButton,
-      elevation: 0,
-      color: options.confirmBtnColor ?? Theme.of(context!).primaryColor,
-      onPressed: onTap,
-      child: Center(
-        child: btnText,
+    // final okayBtn = MaterialButton(
+    //   shape: RoundedRectangleBorder(
+    //     borderRadius: BorderRadius.circular(12.0),
+    //   ),
+    //   padding: options.paddingButton,
+    //   elevation: 0,
+    //   color: options.confirmBtnColor ?? Theme.of(context!).primaryColor,
+    //   onPressed: onTap,
+    //   child: Center(
+    //     child: btnText,
+    //   ),
+    // );
+    final okayBtn = GestureDetector(
+      onTap: onTap,
+      child: Container(
+        width: double.infinity,
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(12),
+            color: options.confirmBtnColor ?? Theme.of(context!).primaryColor),
+        padding: options.paddingButton,
+        child: Center(
+          child: btnText,
+        ),
       ),
     );
 
