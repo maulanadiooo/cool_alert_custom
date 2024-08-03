@@ -8,8 +8,8 @@ class CoolAlertOptions {
   CoolAlertType type;
   CoolAlertAnimType? animType;
   bool? barrierDismissible = false;
-  VoidCallback? onConfirmBtnTap;
-  VoidCallback? onCancelBtnTap;
+  void Function(BuildContext? ctx)? onConfirmBtnTap;
+  void Function(BuildContext? ctx)? onCancelBtnTap;
   String? confirmBtnText;
   String? cancelBtnText;
   Color? confirmBtnColor;
