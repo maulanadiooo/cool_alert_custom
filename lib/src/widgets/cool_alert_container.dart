@@ -92,8 +92,8 @@ class CoolAlertContainer extends StatelessWidget {
                   )
                 : null),
         child: SizedBox(
-          height: 150,
-          width: 150,
+          height: options.lottieHeight ?? 150,
+          width: options.lottieWidth ?? 150,
           child: options.customeImage != null
               ? null
               : Lottie.asset(options.lottieAsset!,

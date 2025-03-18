@@ -87,7 +87,6 @@ class CoolAlertCustom {
 
     /// Asset path of your lottie file
     String? lottieAsset,
-
     String? customeImage,
 
     /// Width of the dialog
@@ -109,6 +108,8 @@ class CoolAlertCustom {
 
     /// Reverse the order of the buttons
     bool reverseBtnOrder = false,
+    double? lottieHeight,
+    double? lottieWidth,
 
     // padding button
     EdgeInsetsGeometry? paddingButton,
@@ -141,6 +142,9 @@ class CoolAlertCustom {
       flareAsset: flareAsset,
       flareAnimationName: flareAnimationName,
       lottieAsset: lottieAsset,
+      customeImage: customeImage,
+      lottieHeight: lottieHeight,
+      lottieWidth: lottieWidth,
       width: width,
       loopAnimation: loopAnimation,
       closeOnConfirmBtnTap: closeOnConfirmBtnTap,

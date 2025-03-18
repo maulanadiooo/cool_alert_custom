@@ -30,6 +30,8 @@ class CoolAlertOptions {
   Duration? autoCloseDuration;
   bool reverseBtnOrder = false;
   EdgeInsetsGeometry? paddingButton;
+  double? lottieHeight;
+  double? lottieWidth;
 
   CoolAlertOptions({
     this.title,
@@ -53,6 +55,8 @@ class CoolAlertOptions {
     this.flareAsset,
     this.flareAnimationName,
     this.lottieAsset,
+    this.lottieHeight,
+    this.lottieWidth,
     this.customeImage,
     this.width,
     this.loopAnimation = false,
