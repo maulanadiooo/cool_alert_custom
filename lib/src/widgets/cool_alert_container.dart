@@ -78,24 +78,22 @@ class CoolAlertContainer extends StatelessWidget {
         anim = options.flareAsset;
       }
       return Container(
-        width: options.lottieWidth ?? double.infinity,
+        width: double.infinity,
         decoration: BoxDecoration(
-            color: options.backgroundColor,
-            borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(options.borderRadius!),
-              topRight: Radius.circular(options.borderRadius!),
-            ),
-            image: options.customeImage != null
-                ? DecorationImage(
-                    image: AssetImage(options.customeImage!),
-                    fit: BoxFit.fill,
-                  )
-                : null),
+          color: options.backgroundColor,
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(options.borderRadius!),
+            topRight: Radius.circular(options.borderRadius!),
+          ),
+        ),
         child: SizedBox(
           height: options.lottieHeight ?? 150,
           width: options.lottieWidth ?? 150,
           child: options.customeImage != null
-              ? null
+              ? Image.asset(
+                  options.customeImage!,
+                  fit: BoxFit.fill,
+                )
               : Lottie.asset(options.lottieAsset!,
                   repeat: options.loopAnimation),
         ),
