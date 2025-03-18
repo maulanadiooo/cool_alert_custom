@@ -86,7 +86,7 @@ class CoolAlertCustom {
     String flareAnimationName = 'play',
 
     /// Asset path of your lottie file
-    String? lottieAsset,
+    required String lottieAsset,
 
     /// Width of the dialog
     double? width,
