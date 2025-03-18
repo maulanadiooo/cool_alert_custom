@@ -78,7 +78,7 @@ class CoolAlertContainer extends StatelessWidget {
         anim = options.flareAsset;
       }
       return Container(
-        width: double.infinity,
+        width: options.lottieWidth ?? double.infinity,
         decoration: BoxDecoration(
             color: options.backgroundColor,
             borderRadius: BorderRadius.only(
