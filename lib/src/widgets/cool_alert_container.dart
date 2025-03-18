@@ -80,16 +80,23 @@ class CoolAlertContainer extends StatelessWidget {
       return Container(
         width: double.infinity,
         decoration: BoxDecoration(
-          color: options.backgroundColor,
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(options.borderRadius!),
-            topRight: Radius.circular(options.borderRadius!),
-          ),
-        ),
+            color: options.backgroundColor,
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(options.borderRadius!),
+              topRight: Radius.circular(options.borderRadius!),
+            ),
+            image: options.customeImage != null
+                ? DecorationImage(
+                    image: AssetImage(options.customeImage!),
+                    fit: BoxFit.fill,
+                  )
+                : null),
         child: SizedBox(
           height: 150,
           width: 150,
-          child: Lottie.asset(options.lottieAsset!,
+          child: options.customeImage != null
+              ? null
+              : Lottie.asset(options.lottieAsset!,
                   repeat: options.loopAnimation),
         ),
       );

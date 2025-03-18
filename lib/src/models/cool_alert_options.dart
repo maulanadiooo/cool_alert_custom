@@ -23,6 +23,7 @@ class CoolAlertOptions {
   String? flareAsset;
   String? flareAnimationName;
   String? lottieAsset;
+  String? customeImage;
   double? width;
   bool loopAnimation;
   bool closeOnConfirmBtnTap;
@@ -52,6 +53,7 @@ class CoolAlertOptions {
     this.flareAsset,
     this.flareAnimationName,
     this.lottieAsset,
+    this.customeImage,
     this.width,
     this.loopAnimation = false,
     this.closeOnConfirmBtnTap = true,
